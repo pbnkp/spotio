@@ -8,7 +8,7 @@
       
       <li class="separator"></li>
       
-      
+      <li id="now_playing"></li>
     </ul>
   </div>
 </div>

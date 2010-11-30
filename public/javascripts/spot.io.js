@@ -3,7 +3,8 @@ var Spotio = function(options){
     play_pause_trigger: "#play_pause",
     previous_track_trigger: "#previous_track",
     next_track_trigger: "#next_track",
-    volume_range: "#volume"
+    volume_range: "#volume",
+    now_playing: "#now_playing"
   }, options);
   
   
