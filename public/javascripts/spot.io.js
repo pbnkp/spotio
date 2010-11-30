@@ -14,6 +14,7 @@ var Spotio = function(options){
   };
   
   
+  // These are the core Spotio methods. Feel free to call them in plugins or your own code.
   var _m = {
     play: {
       toggle_pause: function(){
@@ -31,6 +32,15 @@ var Spotio = function(options){
   };
   
   
+  // Initialise the websocket
+  var host = "localhost";
+  var port = 8080;
+  
+  var socket = new io.Socket(host, {port: port});
+  socket.connect();
+  
+  
+  // Initialise triggers
   $(options.play_pause_trigger).click(_m.play.toggle_pause);
   $(options.previous_track_trigger).click(_m.play.previous_track);
   $(options.next_track_trigger).click(_m.play.next_track);

@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" />
         
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="/javascripts/Socket.IO/socket.io.js"></script>
         <script type="text/javascript" src="/javascripts/spot.io.js"></script>
     </head>
     
