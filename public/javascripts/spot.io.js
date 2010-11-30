@@ -3,7 +3,8 @@ var Spotio = function(options){
     play_pause_trigger: "#play_pause",
     previous_track_trigger: "#previous_track",
     next_track_trigger: "#next_track",
-    volume_range: "#volume"
+    volume_range: "#volume",
+    now_playing: "#now_playing"
   }, options);
   
   
@@ -28,6 +29,10 @@ var Spotio = function(options){
       next_track: function(){
         $.post(_url.next_track);
       }
+    },
+    
+    setNowPlaying: function(track){
+      $(options.now_playing).text(track);
     }
   };
   
@@ -38,6 +43,13 @@ var Spotio = function(options){
   
   var socket = new io.Socket(host, {port: port});
   socket.connect();
+  
+  socket.on('message', function(data){
+    data = $.parseJSON(data);
+    
+    _m.setNowPlaying(data.now_playing);
+    
+  });
   
   
   // Initialise triggers
