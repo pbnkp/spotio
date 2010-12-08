@@ -4,7 +4,7 @@ body { background: #eee; font: 12px "Helvetica Neue", Helvetica, Verdana, sans-s
 #container { height: 100%; position: relative; }
 
 #controls { background: #787878; border-top: 1px solid #292929; bottom: 0; height: 42px; position: fixed; width: 100%; }
-#controls ul { background: #4e4e4e; background: -webkit-gradient(linear, left top, left bottom, from(#707070), to(#4e4e4e)); background: -moz-webkit-gradient(center top, #707070, #4e4e4e); display: block; height: 49px; width: 100%; }
+#controls ul { background: #4e4e4e; background: -webkit-gradient(linear, left top, left bottom, from(#707070), to(#4e4e4e)); background: -moz-linear-gradient(center top, #707070, #4e4e4e); display: block; height: 49px; width: 100%; }
 #controls ul li { cursor: pointer; display: block; float: left; font-weight: bold; line-height: 40px; height: 42px; margin: 0 10px; text-shadow: 0 1px 1px #aaa; }
 
 #play_pause { background: transparent url(/images/controls/play.png) no-repeat 50% 4px; overflow: hidden; text-indent: -9999px; width: 42px; }
