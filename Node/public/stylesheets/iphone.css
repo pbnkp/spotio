@@ -1,0 +1,9 @@
+/*****************************************************************************
+  IPHONE SPECIFIC STYLES
+*****************************************************************************/
+#main, #highlight { height: 463px; width: 320px; }
+#main { background-image: url(/images/noartwork-iphone.png); }
+
+#controls { bottom: 0; top: auto; }
+#controls li { margin: 0 10px; }
+#controls #now-playing { font-size: 14px; height: auto; line-height: 20px; padding: 2px 0 10px; width: 320px; }

@@ -13,6 +13,10 @@ app.configure ->
   app.use express.staticProvider(__dirname + '/public')
   
   app.set 'view engine', 'html'
+  app.set 'view options', {
+    layout: false
+  }
+  
   app.set 'views', './app/views'
   app.register '.html',
     render: (str, options) ->
@@ -22,7 +26,7 @@ app.configure 'development', ->
   app.use express.errorHandler({dumpExceptions: true, showStack: true})
 
 app.configure 'production', ->
-  app.user express.errorHander()
+  app.use express.errorHander()
 
 
 #-----------------------------------------------------------------------------
@@ -45,3 +49,11 @@ require('./app/actions').actions app, argv, options
 port = options.port || 8080
 console.log 'Starting server on port ' + port
 app.listen port
+
+
+#-----------------------------------------------------------------------------
+# SPOTIO
+
+Spotio = require('./spotio')
+s = new Spotio
+s.start()
