@@ -1,41 +1,53 @@
-http = require('http')
-io = require('./vendor/socket.io')
+http = require 'http'
+net = require 'net'
+io = require './vendor/socket.io'
 
 class Spotio
   constructor: (@port) ->
-    @status = {track: "No track playing"}
+    s = this
+    @status = {track: "Connecting..."}
+    
+    @control = net.createConnection 8079
+    @control.setEncoding 'utf8'
+    
+    @control.on 'data', (data) ->
+      s.parseMessage data
+    
     @server = http.createServer (req, res) ->
-      
   
   
   start: ->
     s = this
     @server.listen(8081)
-    @socket = io.listen @server
+    @websocket = io.listen @server
     
-    @socket.on 'connection', (client) ->
-      client.send s.get_status()
+    @websocket.on 'connection', (client) ->
+      client.send s.getStatus()
       
       client.on 'message', (message) ->
-        switch message
-          when "previous-track"
-            s.status["track"] = "previous track"
-          when "play-pause-track"
-            s.status["track"] = "play/pause track"
-          when "next-track"
-            s.status["track"] = "next track"
-        
-        s.broadcast s.get_status()
-      
+        s.queryControl message
   
   
   broadcast: (message) ->
-    @socket.broadcast message
-    
+    @websocket.broadcast message
   
   
-  get_status: ->
+  getStatus: ->
     JSON.stringify @status
+  
+  
+  queryControl: (command) ->
+    @control.write "#{command}\n"
+  
+  
+  parseMessage: (message) ->
+    try
+      message = JSON.parse message.split("\n")[0]
+      @status["track"] = message.track
+    catch error
+      console.log "Error parsing JSON response"
+    finally
+      this.broadcast this.getStatus()
 
 
 module.exports = Spotio
