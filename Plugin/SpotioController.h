@@ -4,16 +4,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "HTTPServer.h"
+#import "SpotioServer.h"
 
 
 @interface SpotioController : NSObject {
 	NSString *currentTrack;
-  HTTPServer *httpServer;
+  SpotioServer *server;
 }
 
 @property(readonly, retain) NSString *currentTrack;
-@property(readonly, retain) HTTPServer *httpServer;
+@property(readonly, retain) SpotioServer *server;
 
 -(SpotioController*)initWithServer;
 +(SpotioController*)sharedInstance;

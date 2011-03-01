@@ -5,19 +5,23 @@
 
 #import <objc/objc-class.h>
 #import "SpotioController.h"
+#import "SpotioLogger.h"
+
+
+#define FORMAT(format, ...) [NSString stringWithFormat:(format), ##__VA_ARGS__]
 
 
 @implementation SpotioController
 
-@synthesize currentTrack, httpServer;
+@synthesize currentTrack, server;
 
 
 - (SpotioController*)initWithServer
 {
   self = [super init];
   
-  httpServer = [HTTPServer sharedInstance];
-  [httpServer start];
+  server = [[SpotioServer alloc] init];
+  [server start];
   
   return self;
 }
@@ -26,7 +30,7 @@
 + (void)load
 {
   [SpotioController sharedInstance];
-  NSLog(@"Spotio installed");
+  [SpotioLogger log:@"installed"];
 }
 
 
@@ -67,7 +71,7 @@
 
 - (void)startNewTrack:(NSString *)trackName
 {
-  NSLog(@"Spotio: Track started: \"%@\"", trackName);
+  [SpotioLogger log:FORMAT(@"Track started: \"%@\"", trackName)];
   currentTrack = trackName;
 }
 

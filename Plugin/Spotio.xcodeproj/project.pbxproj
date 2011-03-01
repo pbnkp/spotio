@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		FC798891131AC23F00A9D26A /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC798890131AC23F00A9D26A /* HTTPServer.m */; };
-		FCBBDA05131AFA4F004371DB /* SpotioResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBBDA04131AFA4F004371DB /* SpotioResponse.m */; };
+		FC78CEE6131D842C0060C481 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = FC78CEE5131D842C0060C481 /* AsyncSocket.m */; };
+		FC78CEF6131D85150060C481 /* SpotioServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC78CEF5131D85150060C481 /* SpotioServer.m */; };
+		FC78CF14131D86F30060C481 /* SpotioLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FC78CF13131D86F30060C481 /* SpotioLogger.m */; };
 		FCC72BA0131941D50058AEC7 /* SpotioController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC72B9F131941D50058AEC7 /* SpotioController.m */; };
 /* End PBXBuildFile section */
 
@@ -21,10 +22,12 @@
 		8D5B49B6048680CD000E48DA /* Spotio.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spotio.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		FC79888F131AC23F00A9D26A /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
-		FC798890131AC23F00A9D26A /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
-		FCBBDA03131AFA4F004371DB /* SpotioResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotioResponse.h; sourceTree = "<group>"; };
-		FCBBDA04131AFA4F004371DB /* SpotioResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotioResponse.m; sourceTree = "<group>"; };
+		FC78CEE4131D842C0060C481 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		FC78CEE5131D842C0060C481 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		FC78CEF4131D85150060C481 /* SpotioServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotioServer.h; sourceTree = "<group>"; };
+		FC78CEF5131D85150060C481 /* SpotioServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotioServer.m; sourceTree = "<group>"; };
+		FC78CF12131D86F30060C481 /* SpotioLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotioLogger.h; sourceTree = "<group>"; };
+		FC78CF13131D86F30060C481 /* SpotioLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotioLogger.m; sourceTree = "<group>"; };
 		FCC72B9E131941D50058AEC7 /* SpotioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotioController.h; sourceTree = "<group>"; };
 		FCC72B9F131941D50058AEC7 /* SpotioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotioController.m; sourceTree = "<group>"; };
 		FCC72C44131A9DE60058AEC7 /* SPTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTypes.h; sourceTree = "<group>"; };
@@ -74,13 +77,15 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FCBBDA03131AFA4F004371DB /* SpotioResponse.h */,
-				FCBBDA04131AFA4F004371DB /* SpotioResponse.m */,
-				FC79888F131AC23F00A9D26A /* HTTPServer.h */,
-				FC798890131AC23F00A9D26A /* HTTPServer.m */,
+				FC78CEE4131D842C0060C481 /* AsyncSocket.h */,
+				FC78CEE5131D842C0060C481 /* AsyncSocket.m */,
 				FCC72B9E131941D50058AEC7 /* SpotioController.h */,
 				FCC72B9F131941D50058AEC7 /* SpotioController.m */,
 				FCC72C44131A9DE60058AEC7 /* SPTypes.h */,
+				FC78CEF4131D85150060C481 /* SpotioServer.h */,
+				FC78CEF5131D85150060C481 /* SpotioServer.m */,
+				FC78CF12131D86F30060C481 /* SpotioLogger.h */,
+				FC78CF13131D86F30060C481 /* SpotioLogger.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -180,8 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC72BA0131941D50058AEC7 /* SpotioController.m in Sources */,
-				FC798891131AC23F00A9D26A /* HTTPServer.m in Sources */,
-				FCBBDA05131AFA4F004371DB /* SpotioResponse.m in Sources */,
+				FC78CEE6131D842C0060C481 /* AsyncSocket.m in Sources */,
+				FC78CEF6131D85150060C481 /* SpotioServer.m in Sources */,
+				FC78CF14131D86F30060C481 /* SpotioLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +198,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -213,6 +220,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -230,7 +238,7 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -245,7 +253,7 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
