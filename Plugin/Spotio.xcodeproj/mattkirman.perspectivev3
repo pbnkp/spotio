@@ -282,7 +282,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
+									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -323,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>FC0BE17D11C18821009BA7A0</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SpotioServer.m</string>
+								<string>SpotioController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>FC0BE17E11C18821009BA7A0</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SpotioServer.m</string>
+										<string>SpotioController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FC78CF85131D930C0060C481</string>
+										<string>FC78CFD0131DA0EB0060C481</string>
 										<key>history</key>
 										<array>
 											<string>FCC72BB2131A6E3E0058AEC7</string>
@@ -347,10 +347,10 @@
 											<string>FC78CEFB131D85FA0060C481</string>
 											<string>FC78CF34131D88810060C481</string>
 											<string>FC78CF4D131D8AEB0060C481</string>
-											<string>FC78CF4E131D8AEB0060C481</string>
-											<string>FC78CF50131D8AEB0060C481</string>
-											<string>FC78CF72131D90B20060C481</string>
-											<string>FC78CF73131D90B20060C481</string>
+											<string>FC78CFCC131DA0EB0060C481</string>
+											<string>FC78CFCD131DA0EB0060C481</string>
+											<string>FC78CFCE131DA0EB0060C481</string>
+											<string>FC78CFCF131DA0EB0060C481</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

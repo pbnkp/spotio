@@ -15,11 +15,15 @@
 @property(readonly, retain) NSString *currentTrack;
 @property(readonly, retain) SpotioServer *server;
 
--(SpotioController*)initWithServer;
-+(SpotioController*)sharedInstance;
+- (SpotioController*)initWithServer;
++ (SpotioController*)sharedInstance;
 
--(void)startNewTrack:(NSString*)trackName;
+- (void)startNewTrack:(NSString*)trackName;
 
-+(BOOL)swapMethod:(SEL)firstSelector withMethod:(SEL)secondSelector onClass:(Class)class;
++ (BOOL)swapMethod:(SEL)firstSelector withMethod:(SEL)secondSelector onClass:(Class)class;
+
+- (void)nextTrack;
+- (void)previousTrack;
+- (void)playPauseTrack;
 
 @end

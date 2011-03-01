@@ -75,4 +75,22 @@
   currentTrack = trackName;
 }
 
+
+- (void)previousTrack
+{
+  
+}
+
+
+- (void)nextTrack
+{
+  
+}
+
+
+- (void)playPauseTrack
+{
+  
+}
+
 @end

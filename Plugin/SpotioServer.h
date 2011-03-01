@@ -16,5 +16,6 @@
 
 - (void)start;
 - (void)stop;
+- (void)sendStatusToSock:(AsyncSocket *)sock;
 
 @end

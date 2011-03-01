@@ -4,6 +4,7 @@
 //
 
 #import "SpotioServer.h"
+#import "SpotioController.h"
 #import "SpotioLogger.h"
 
 
@@ -59,6 +60,15 @@
 }
 
 
+- (void)sendStatusToSock:(AsyncSocket *)sock
+{
+  SpotioController *controller = [SpotioController sharedInstance];
+  NSString *response = FORMAT(@"{\"track\":\"%@\"}", [controller currentTrack]);
+  NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
+  [sock writeData:data withTimeout:-1 tag:0];
+}
+
+
 - (void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket
 {
   [connectedSockets addObject:newSocket];
@@ -68,11 +78,7 @@
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
   [SpotioLogger log:FORMAT(@"Accepted client %@:%hu", host, port)];
-  
-  NSString *status = @"{\"track\":\"Spotify Hello World\"}";
-  NSData *data = [status dataUsingEncoding:NSUTF8StringEncoding];
-  
-  [sock writeData:data withTimeout:-1 tag:0];
+  [self sendStatusToSock:sock];
   [sock readDataToData:[AsyncSocket LFData] withTimeout:-1 tag:0];
 }
 
@@ -83,12 +89,17 @@
   NSString *msg = [[[NSString alloc] initWithData:strData encoding:NSUTF8StringEncoding] autorelease];
   
   if (msg) {
-    [SpotioLogger log:msg];
+    [SpotioLogger log:FORMAT(@"Received command: %@", msg)];
     
-    NSString *response = FORMAT(@"{\"track\":\"%@\"}", msg);
-    NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
+    if ([msg isEqualToString:@"previous-track"]) {
+      [[SpotioController sharedInstance] previousTrack];
+    } else if ([msg isEqualToString:@"next-track"]) {
+      [[SpotioController sharedInstance] nextTrack];
+    } else if ([msg isEqualToString:@"play-pause-track"]) {
+      [[SpotioController sharedInstance] playPauseTrack];
+    }
     
-    [sock writeData:data withTimeout:-1 tag:0];
+    [self sendStatusToSock:sock];
   } else {
     [SpotioLogger log:@"Error converting received data into UTF-8 string"];
   }
