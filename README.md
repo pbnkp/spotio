@@ -11,13 +11,28 @@ _This version of Spotio is an extremely early developer preview. Features are mo
 * Spotify
 * [Simbl](http://www.culater.net/software/SIMBL/SIMBL.php)
 * [Rake](http://rake.rubyforge.org/) for installation from source.
-* [Node.js](http://nodejs.org/)
+* [Node](http://nodejs.org/)
 * [Npm](http://npmjs.org/) for CoffeeScript, Express & Eco modules.
 
 
 ##Recommended Browsers
 
 To get the best out of Spotio it is recommeded that you use a modern web browser. Spotio is tested on Chrome 11, Safari 5, Firefox 4 and Mobile Safari (iOS 4.2.1+). Internet Explorer isn't, and never will be, supported.
+
+
+##How Does Spotio Work?
+
+Spotio is comprised of two parts -- a SIMBL bundle that creates an API and a frontend Node server that then allows multiple clients to work with the API.
+
+When Spotify is run SIMBL injects the Spotio bundle into the process. Our bundle then creates a socket (bound to 127.0.0.1:8079) that listens for commands from clients. Current API methods are:
+
+* `previous-track`
+* `next-track`
+* `play-pause-track`
+
+Even though these methods are published here please don't rely on them as they may change as we move to a release candidate.
+
+The Spotio bundle is completely client agnostic. Feel free to try out the API with netcat (other network tools are available) -- `nc -vv 127.0.0.1 8079`.
 
 
 ##Installation From Source
