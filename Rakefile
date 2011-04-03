@@ -3,7 +3,7 @@ PLUGIN_DIR = File.join(ROOT_DIR, 'Plugin')
 XCODE_PROJECT = File.join(PLUGIN_DIR, 'Spotio.xcodeproj')
 SPOTIO_BUNDLE = "Spotio.bundle"
 PLUGIN_BUILD_DIR = File.join(PLUGIN_DIR, 'build')
-PLUGIN_RELEASE_DIR = File.join(PLUGIN_BUILD_DIR, 'Release')
+PLUGIN_RELEASE_DIR = File.join(PLUGIN_BUILD_DIR, 'Release', 'Products', 'Release')
 SIMBL_DIR = File.expand_path(File.join('~', 'Library', 'Application Support', 'SIMBL'))
 SIMBL_PLUGINS_DIR = File.expand_path(File.join(SIMBL_DIR, 'Plugins'))
 

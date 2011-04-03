@@ -6,6 +6,18 @@
 	<integer>0</integer>
 	<key>IDEWorkspaceUserSettings_BuildFolderNameStyle</key>
 	<integer>0</integer>
+	<key>IDEWorkspaceUserSettings_BuildLocationStyle</key>
+	<integer>1</integer>
+	<key>IDEWorkspaceUserSettings_BuildSubfolderCustomName</key>
+	<string>Release</string>
+	<key>IDEWorkspaceUserSettings_BuildSubfolderNameStyle</key>
+	<integer>1</integer>
+	<key>IDEWorkspaceUserSettings_DerivedDataCustomLocation</key>
+	<string>build</string>
+	<key>IDEWorkspaceUserSettings_DerivedDataLocationStyle</key>
+	<integer>2</integer>
+	<key>IDEWorkspaceUserSettings_LiveSourceIssuesEnabled</key>
+	<true/>
 	<key>IDEWorkspaceUserSettings_SnapshotAutomaticallyBeforeSignificantChanges</key>
 	<true/>
 	<key>IDEWorkspaceUserSettings_SnapshotLocationStyle</key>

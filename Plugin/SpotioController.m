@@ -6,6 +6,7 @@
 #import <objc/objc-class.h>
 #import "SpotioController.h"
 #import "SpotioLogger.h"
+#import "SPGrowlDelegate+Spotio.h"
 
 
 #define FORMAT(format, ...) [NSString stringWithFormat:(format), ##__VA_ARGS__]
@@ -13,15 +14,21 @@
 
 @implementation SpotioController
 
-@synthesize currentTrack, server;
+@synthesize currentTrack, currentArtist, server;
 
 
 - (SpotioController*)initWithServer
 {
   self = [super init];
   
+  // Set up some default values for our track and artist
+  currentTrack = @"";
+  currentArtist = @"";
+  
   server = [[SpotioServer alloc] init];
   [server start];
+  
+  [SPGrowlDelegate initSpotio];
   
   return self;
 }
@@ -65,32 +72,38 @@
 - (void)dealloc
 {
   [currentTrack release], currentTrack = nil;
+  [currentArtist release], currentArtist = nil;
   [super dealloc];
 }
 
 
-- (void)startNewTrack:(NSString *)trackName
+- (void)startNewTrack:(NSString *)trackName byArtist:(NSString *)artistName
 {
-  [SpotioLogger log:FORMAT(@"Track started: \"%@\"", trackName)];
-  currentTrack = trackName;
+  [SpotioLogger log:FORMAT(@"Track started: %@ by %@", trackName, artistName)];
+  
+  currentTrack = [trackName copy];
+  currentArtist = [artistName copy];
+  
+  // Attempt to push this change to our Node app
+  [server broadcastStatus];
 }
 
 
 - (void)previousTrack
 {
-  
+  [SpotioLogger log:@"Previous track"];
 }
 
 
 - (void)nextTrack
 {
-  
+  [SpotioLogger log:@"Next track"];
 }
 
 
 - (void)playPauseTrack
 {
-  
+  [SpotioLogger log:@"Play/pause track"];
 }
 
 @end

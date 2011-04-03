@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		FC6A9A9B1348D7AF0037981F /* SPController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6A9A9A1348D7AF0037981F /* SPController.m */; };
 		FC78CEE6131D842C0060C481 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = FC78CEE5131D842C0060C481 /* AsyncSocket.m */; };
 		FC78CEF6131D85150060C481 /* SpotioServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC78CEF5131D85150060C481 /* SpotioServer.m */; };
 		FC78CF14131D86F30060C481 /* SpotioLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FC78CF13131D86F30060C481 /* SpotioLogger.m */; };
+		FC78D00A131DA5C80060C481 /* SPGrowlDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC78D009131DA5C80060C481 /* SPGrowlDelegate.m */; };
+		FCBAEF881346782900080B6D /* SPGrowlDelegate+Spotio.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBAEF871346782900080B6D /* SPGrowlDelegate+Spotio.m */; };
 		FCC72BA0131941D50058AEC7 /* SpotioController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC72B9F131941D50058AEC7 /* SpotioController.m */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +25,18 @@
 		8D5B49B6048680CD000E48DA /* Spotio.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spotio.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		FC6A9A9A1348D7AF0037981F /* SPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPController.m; sourceTree = "<group>"; };
 		FC78CEE4131D842C0060C481 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
 		FC78CEE5131D842C0060C481 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		FC78CEF4131D85150060C481 /* SpotioServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotioServer.h; sourceTree = "<group>"; };
 		FC78CEF5131D85150060C481 /* SpotioServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotioServer.m; sourceTree = "<group>"; };
 		FC78CF12131D86F30060C481 /* SpotioLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotioLogger.h; sourceTree = "<group>"; };
 		FC78CF13131D86F30060C481 /* SpotioLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotioLogger.m; sourceTree = "<group>"; };
+		FC78CFFE131DA58F0060C481 /* SPGrowlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGrowlDelegate.h; sourceTree = "<group>"; };
+		FC78D009131DA5C80060C481 /* SPGrowlDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGrowlDelegate.m; sourceTree = "<group>"; };
+		FCBAEF861346782900080B6D /* SPGrowlDelegate+Spotio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPGrowlDelegate+Spotio.h"; sourceTree = "<group>"; };
+		FCBAEF871346782900080B6D /* SPGrowlDelegate+Spotio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPGrowlDelegate+Spotio.m"; sourceTree = "<group>"; };
+		FCBAEFCA13467ADB00080B6D /* SPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPController.h; sourceTree = "<group>"; };
 		FCC72B9E131941D50058AEC7 /* SpotioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotioController.h; sourceTree = "<group>"; };
 		FCC72B9F131941D50058AEC7 /* SpotioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotioController.m; sourceTree = "<group>"; };
 		FCC72C44131A9DE60058AEC7 /* SPTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTypes.h; sourceTree = "<group>"; };
@@ -77,6 +86,11 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FCBAEFCA13467ADB00080B6D /* SPController.h */,
+				FC6A9A9A1348D7AF0037981F /* SPController.m */,
+				FCBAEF861346782900080B6D /* SPGrowlDelegate+Spotio.h */,
+				FCBAEF871346782900080B6D /* SPGrowlDelegate+Spotio.m */,
+				FC78CFFE131DA58F0060C481 /* SPGrowlDelegate.h */,
 				FC78CEE4131D842C0060C481 /* AsyncSocket.h */,
 				FC78CEE5131D842C0060C481 /* AsyncSocket.m */,
 				FCC72B9E131941D50058AEC7 /* SpotioController.h */,
@@ -86,6 +100,7 @@
 				FC78CEF5131D85150060C481 /* SpotioServer.m */,
 				FC78CF12131D86F30060C481 /* SpotioLogger.h */,
 				FC78CF13131D86F30060C481 /* SpotioLogger.m */,
+				FC78D009131DA5C80060C481 /* SPGrowlDelegate.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -188,6 +203,9 @@
 				FC78CEE6131D842C0060C481 /* AsyncSocket.m in Sources */,
 				FC78CEF6131D85150060C481 /* SpotioServer.m in Sources */,
 				FC78CF14131D86F30060C481 /* SpotioLogger.m in Sources */,
+				FC78D00A131DA5C80060C481 /* SPGrowlDelegate.m in Sources */,
+				FCBAEF881346782900080B6D /* SPGrowlDelegate+Spotio.m in Sources */,
+				FC6A9A9B1348D7AF0037981F /* SPController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +263,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					/Applications/Spotify.app/Contents/MacOS/Spotify,
+				);
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 			};
@@ -258,6 +280,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					/Applications/Spotify.app/Contents/MacOS/Spotify,
+				);
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 			};

@@ -63,9 +63,20 @@
 - (void)sendStatusToSock:(AsyncSocket *)sock
 {
   SpotioController *controller = [SpotioController sharedInstance];
-  NSString *response = FORMAT(@"{\"track\":\"%@\"}", [controller currentTrack]);
+  NSString *response = FORMAT(@"{\"track\":\"%@\",\"artist\":\"%@\"}\n", [controller currentTrack], [controller currentArtist]);
   NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
   [sock writeData:data withTimeout:-1 tag:0];
+}
+
+
+- (void)broadcastStatus
+{
+  if (isRunning) {
+    NSUInteger i;
+    for (i = 0; i < [connectedSockets count]; i++) {
+      [self sendStatusToSock:[connectedSockets objectAtIndex:i]];
+    }
+  }
 }
 
 
@@ -99,7 +110,7 @@
       [[SpotioController sharedInstance] playPauseTrack];
     }
     
-    [self sendStatusToSock:sock];
+    [self broadcastStatus];
   } else {
     [SpotioLogger log:@"Error converting received data into UTF-8 string"];
   }
