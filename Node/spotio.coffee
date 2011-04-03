@@ -5,7 +5,7 @@ io = require './vendor/socket.io'
 class Spotio
   constructor: (@port) ->
     s = this
-    @status = {track: "Connecting..."}
+    @status = {track: "Connecting...", artist: ""}
     
     @control = net.createConnection 8079
     @control.setEncoding 'utf8'
@@ -44,6 +44,7 @@ class Spotio
     try
       message = JSON.parse message.split("\n")[0]
       @status["track"] = message.track
+      @status["artist"] = message.artist
     catch error
       console.log "Error parsing JSON response"
     finally
