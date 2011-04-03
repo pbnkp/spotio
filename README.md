@@ -50,7 +50,7 @@ You can then build and install the Spotify SIMBL bundle with:
 
 ## Pre-compiled Binaries
 
-If you don't feel like compiling the SIMBL plugin from source you can download the latest version directly from [GitHub](https://github.com/mattkirman/spotio/archives/master). You will then need to copy it manually into your plugin directory (usually `~/Library/Application Support/SIMBL/Plugins`).
+If you don't feel like compiling the SIMBL plugin from source you can download the latest version directly from [GitHub](https://github.com/mattkirman/spotio/downloads). You will then need to copy it manually into your plugin directory (usually `~/Library/Application Support/SIMBL/Plugins`).
 
 
 ## Usage
