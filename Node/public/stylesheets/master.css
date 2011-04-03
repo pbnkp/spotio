@@ -9,12 +9,14 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 *****************************************************************************/
 html, body { color: #fff; font: bold 11px/11px "Helvetica Neue", Helvetica, sans-serif; text-shadow: 0 -1px 1px #000; }
 
-#main { background: #000 url(/images/noartwork.png) no-repeat 0 0; height: 216px; position: relative; width: 156px; }
+#main { background: #000 url(/images/noartwork.png) no-repeat 0 0; /*height: 212px;*/ height: 230px; position: relative; width: 156px; }
 
 #highlight { background: url(/images/highlight.png) no-repeat 100% 0; height: 156px; width: 156px; }
 
-#controls { background: url(/images/controlsBG.png) repeat-x; min-height: 37px; position: absolute; top: 138px; width: 100%; }
-#controls ul { display: block; min-height: 20px; margin: 8px auto 0; text-align: center; }
+#controls { background: url(/images/controlsBG.png) repeat-x; min-height: 37px; position: absolute; /*top: 138px;*/ top: 156px; width: 100%; }
+#controls ul { display: block; min-height: 20px; margin: 4px auto 0; text-align: center; }
+#controls ul.playback { margin-top: 8px; }
+
 #controls li { cursor: pointer; display: inline-block; height: 20px; margin: 0 7px; width: 22px; }
 
 #controls li#previous-track { background: url(/images/back.png) no-repeat; }
