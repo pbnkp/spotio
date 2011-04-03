@@ -1,5 +1,6 @@
 http = require 'http'
 net = require 'net'
+spawn = require('child_process').spawn
 io = require './vendor/socket.io'
 
 class Spotio
@@ -37,7 +38,14 @@ class Spotio
   
   
   queryControl: (command) ->
-    @control.write "#{command}\n"
+    if command == 'play-pause-track'
+      spawn 'osascript', ['bin/play_pause.applescript']
+    else if command == 'next-track'
+      spawn 'osascript', ['bin/next_track.applescript']
+    else if command == 'previous-track'
+      spawn 'osascript', ['bin/previous_track.applescript']
+      
+    #@control.write "#{command}\n"
   
   
   parseMessage: (message) ->
