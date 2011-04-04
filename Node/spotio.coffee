@@ -38,12 +38,10 @@ class Spotio
   
   
   queryControl: (command) ->
-    if command == 'play-pause-track'
-      spawn 'osascript', ['bin/play_pause.applescript']
-    else if command == 'next-track'
-      spawn 'osascript', ['bin/next_track.applescript']
-    else if command == 'previous-track'
-      spawn 'osascript', ['bin/previous_track.applescript']
+    switch command
+      when 'play-pause-track' then spawn 'osascript', ['bin/play_pause.applescript']
+      when 'next-track' then spawn 'osascript', ['bin/next_track.applescript']
+      when 'previous-track' then spawn 'osascript', ['bin/previous_track.applescript']
       
     #@control.write "#{command}\n"
   
