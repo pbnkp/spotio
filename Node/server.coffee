@@ -9,8 +9,8 @@ app = express.createServer()
 
 app.configure ->
   app.use express.logger()
-  app.use express.bodyDecoder()
-  app.use express.staticProvider(__dirname + '/public')
+  app.use express.bodyParser()
+  app.use express.static(__dirname + '/public')
   
   app.set 'view engine', 'html'
   app.set 'view options', {
