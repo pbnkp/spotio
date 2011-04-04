@@ -11,7 +11,7 @@ _This version of Spotio is an extremely early alpha. Features are mostly incompl
 * Spotify
 * [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php)
 * [Node](http://nodejs.org/)
-* [Npm](http://npmjs.org/) for CoffeeScript, Express & Eco modules.
+* [Npm](http://npmjs.org/) for CoffeeScript.
 * [Rake](http://rake.rubyforge.org/) for installation from source.
 
 
