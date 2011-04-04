@@ -78,4 +78,4 @@ If you're not on GitHub feel free to email me at <matt@mattkirman.com>.
 
 ## License
 
-Spotio is released under the MIT license.
+You may use Spotio under the terms of either the MIT License or the GNU General Public License (GPL) version 2.
