@@ -29,7 +29,7 @@ console.log "Starting server on port " + port
 
 http.createServer (request, response) ->
   uri  = url.parse(request.url).pathname
-  uri = uri + "index.html" if uri == "/"
+  uri += "index.html" if uri.match /\/$/
   
   filename = path.join(process.cwd(), "public", uri)
   log request

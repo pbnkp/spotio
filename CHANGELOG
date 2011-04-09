@@ -1,5 +1,6 @@
 == Edge
   * Removed the dependency on the Express framework
+  * [Bugfix] Improved handling of directories in the static file server
 
 == 2.0.0.alpha2 / 2011-04-04
   * [Bugfix] Fixed compatability with Express JS 2.0
