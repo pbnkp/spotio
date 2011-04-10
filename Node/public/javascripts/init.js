@@ -1,7 +1,7 @@
 (function() {
   var current_status, socket;
   current_status = {};
-  socket = new io.Socket('localhost', {
+  socket = new io.Socket(window.location.hostname, {
     port: 8081
   });
   socket.connect();

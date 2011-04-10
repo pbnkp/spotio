@@ -1,10 +1,6 @@
 current_status = {}
 
-
-socket = new io.Socket 'localhost', {
-  port: 8081
-};
-
+socket = new io.Socket window.location.hostname, { port: 8081 };
 socket.connect()
 
 socket.on 'message', (data) ->
