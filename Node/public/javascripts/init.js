@@ -7,7 +7,8 @@
   socket.connect();
   socket.on('message', function(data) {
     current_status = JSON.parse(data);
-    return document.getElementById("now-playing").innerHTML = current_status["track"] + "<br />" + current_status["artist"];
+    document.getElementById("track").innerHTML = current_status["track"];
+    return document.getElementById("artist").innerHTML = current_status["artist"];
   });
   document.getElementById("previous-track").addEventListener('click', function() {
     return socket.send('previous-track');

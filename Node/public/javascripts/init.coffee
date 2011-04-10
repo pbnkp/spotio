@@ -5,7 +5,8 @@ socket.connect()
 
 socket.on 'message', (data) ->
   current_status = JSON.parse(data)
-  document.getElementById("now-playing").innerHTML = current_status["track"] + "<br />" + current_status["artist"]
+  document.getElementById("track").innerHTML = current_status["track"]
+  document.getElementById("artist").innerHTML = current_status["artist"]
 
 
 # Register eventHandlers for the Spotio controls

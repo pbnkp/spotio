@@ -9,11 +9,15 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 *****************************************************************************/
 html, body { color: #fff; font: bold 11px/11px "Helvetica Neue", Helvetica, sans-serif; text-shadow: 0 -1px 1px #000; }
 
-#main { background: #000 url(/images/noartwork.png) no-repeat 0 0; /*height: 212px;*/ height: 230px; position: relative; width: 156px; }
+#main { position: relative; width: 156px; }
 
+#now-playing { background: url(/images/controlsBG.png) repeat-x 0 0; min-height: 32px; display: block; line-height: 16px; padding: 4px 0; position: absolute; text-align: center; top: 0; vertical-align: middle; width: 156px; }
+#now-playing #artist { font-style: italic; }
+
+#album-art { background: #000 url(/images/noartwork.png) no-repeat 50% 40px; height: 156px; padding: 40px 0 37px; }
 #highlight { background: url(/images/highlight.png) no-repeat 100% 0; height: 156px; width: 156px; }
 
-#controls { background: url(/images/controlsBG.png) repeat-x; min-height: 37px; position: absolute; /*top: 138px;*/ top: 156px; width: 100%; }
+#controls { background: url(/images/controlsBG.png) repeat-x; height: 37px; position: absolute; /*top: 138px;*/ top: 196px; width: 100%; }
 #controls ul { display: block; min-height: 20px; margin: 4px auto 0; text-align: center; }
 #controls ul.playback { margin-top: 8px; }
 
@@ -22,5 +26,3 @@ html, body { color: #fff; font: bold 11px/11px "Helvetica Neue", Helvetica, sans
 #controls li#previous-track { background: url(/images/back.png) no-repeat; }
 #controls li#play-pause-track { background: url(/images/play.png) no-repeat; }
 #controls li#next-track { background: url(/images/next.png) no-repeat; }
-
-#controls #now-playing { display: table-cell; height: 40px; line-height: 16px; margin: 0; text-align: center; vertical-align: middle; width: 156px; }
