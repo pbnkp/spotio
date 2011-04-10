@@ -11,18 +11,21 @@ html, body { color: #fff; font: bold 11px/11px "Helvetica Neue", Helvetica, sans
 
 #main { position: relative; width: 180px; }
 
-#now-playing { background: url(/images/controlsBG.png) repeat-x 0 0; min-height: 32px; display: block; line-height: 16px; padding: 4px 0; position: absolute; text-align: center; top: 0; vertical-align: middle; width: 180px; }
+#now-playing { background: url(/images/controlsBG.png) repeat-x 0 0; min-height: 32px; display: block; line-height: 16px; padding: 4px; position: absolute; text-align: center; top: 0; vertical-align: middle; width: 172px; }
+#now-playing #track { font-size: 12px; }
 #now-playing #artist { font-style: italic; }
 
-#album-art { background: #000 url(/images/noartwork.png) no-repeat 50% 40px; height: 180px; padding: 40px 0 37px; }
+#album-art { background: #000 url(/images/noartwork.png) no-repeat 50% 40px; height: 180px; padding: 40px 0; }
 #highlight { background: url(/images/highlight.png) no-repeat 100% 0; height: 180px; width: 180px; }
 
-#controls { background: url(/images/controlsBG.png) repeat-x; height: 37px; position: absolute; /*top: 138px;*/ top: 220px; width: 100%; }
+#controls { background: url(/images/controlsBG.png) repeat-x; height: 40px; position: absolute; /*top: 138px;*/ top: 220px; width: 100%; }
 #controls ul { display: block; min-height: 20px; margin: 4px auto 0; text-align: center; }
 #controls ul.playback { margin-top: 8px; }
 
-#controls li { cursor: pointer; display: inline-block; height: 20px; margin: 0 7px; width: 22px; }
+#controls li { background-position: 50% 0; background-repeat: no-repeat; cursor: pointer; display: inline-block; height: 20px; margin: 0 4px; width: 30px; }
+#controls li:hover { background-position: 50% -20px; }
+#controls li:active { background-position: 50% -40px; }
 
-#controls li#previous-track { background: url(/images/back.png) no-repeat; }
-#controls li#play-pause-track { background: url(/images/play.png) no-repeat; }
-#controls li#next-track { background: url(/images/next.png) no-repeat; }
+#controls li#previous-track { background-image: url(/images/back.png); }
+#controls li#play-pause-track { background-image: url(/images/play.png); }
+#controls li#next-track { background-image: url(/images/next.png); }
