@@ -1,9 +1,11 @@
 /*****************************************************************************
   IPHONE SPECIFIC STYLES
 *****************************************************************************/
-#main, #highlight { height: 463px; width: 320px; }
-#main { background-image: url(/images/noartwork-iphone.png); }
+#now-playing { font-size: 14px; line-height: 20px; min-height: 62px; width: 312px; }
+#now-playing #track { font-size: 15px; }
 
-#controls { bottom: 0; top: auto; }
+#album-art, #highlight { height: 320px; width: 320px; }
+#album-art { background-image: url(/images/noartwork-iphone.png); background-position: 50% 70px; padding: 70px 0; }
+
+#controls { bottom: 0; height: 70px; top: auto; width: 320px; }
 #controls li { margin: 0 10px; }
-#controls #now-playing { font-size: 14px; height: auto; line-height: 20px; padding: 2px 0 10px; width: 320px; }
